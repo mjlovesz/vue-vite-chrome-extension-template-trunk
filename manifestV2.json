@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Vue Vite Chrome Extension Example",
+    "version": "1.0.0",    
+    "description": "Vue Vite Chrome Extension made with 'crxjs': https://github.com/crxjs/chrome-extension-tools",
+    "permissions": [
+        "bookmarks",
+        "storage",
+        "alarms",
+        "tabs",
+        "history",
+        "chrome://favicon/",
+        "https://api.bing.com/*",
+        "chrome://favorites/*"
+    ],
+    "incognito": "split",
+    "background": {
+        "scripts": [
+            "./service-worker-loader.js"
+        ],
+        "persistent": false
+    },
+    "options_page": "index.html",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'"
+  }
